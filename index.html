@@ -13,7 +13,7 @@
 	url: url,
 	success: function (result){
 		console.log(result);
-		console.log(result.name)
+		console.log(result.items[0].statistics.subscriberCount)
 
 		$("#subs").text(result.items[0].statistics.subscriberCount);
   			}
