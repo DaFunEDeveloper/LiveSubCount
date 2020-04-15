@@ -9,15 +9,12 @@
 
   	<script type="text/javascript">
   		var url = 'https://www.googleapis.com/youtube/v3/channels?part=statistics$id=UCa69WmSayrfvrJNtrYrCDaQ&key=AIzaSyCPlMzpg5T6OmCzYTxr9Ktl46WNgG_6MpA'
-  		$.ajax ({
-	url: url,
-	success: function (result){
-		console.log(result);
-		console.log(result.items[0].statistics.subscriberCount)
+  		$.getJSON(url, function(data) {
+  			console.log(data);
+			console.log(data.items[0].statistics.subscriberCount)
 
-		$("#subs").text(result.items[0].statistics.subscriberCount);
-  			}
-  		})
+			$("#subs").text(data.items[0].statistics.subscriberCount);
+  		});
   	</script>
 </head>
 <body>
