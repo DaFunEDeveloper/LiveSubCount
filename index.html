@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Live Subscriber Count for Da Fun E Man</title>
+
+  	<script type="text/javascript">
+  		var url = 'https://www.googleapis.com/youtube/v3/channels?part=statistics$id=<NAME>&key=AIzaSyCPlMzpg5T6OmCzYTxr9Ktl46WNgG_6MpA'
+  		$.ajax ({
+	url: url,
+	success: function (result){
+		console.log(result);
+		console.log(result.name)
+
+		$("#subs").text(result.items[0].statistics.subscriberCount);
+  			}
+  		})
+  	</script>
+</head>
+<body>
+
+
+
+<script
+  	src="https://code.jquery.com/jquery-3.4.1.js"
+  	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  	crossorigin="anonymous"></script>
+
+</body>
+</html>
